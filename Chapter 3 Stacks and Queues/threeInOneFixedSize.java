@@ -21,20 +21,20 @@ public class threeInOneFixedSize{
         catch(Exception e){
             System.out.println("too bad error haha");
         }
-        for(int num : soln.values){
+        for(Integer num : soln.values){
             System.out.print(num + " ");
         }
     }
 }
 
 class Solution{
-    int[] values;
+    Integer[] values;
     int[] sizes = new int[3];
     int capacity;
 
     Solution(int capacity){
         this.capacity = capacity;
-        values = new int[3*capacity];
+        values = new Integer[3*capacity];
     }
 
     public void push(int stackNum, int val) throws Exception{
@@ -69,7 +69,7 @@ class Solution{
             throw new Exception();
         }
         int poppy = values[topOfStack(stackNum)];
-        values[topOfStack(stackNum)] = 0;
+        values[topOfStack(stackNum)] = null;
         sizes[stackNum] -= 1;
         return poppy;
     }
